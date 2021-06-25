@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url(image/wall.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+
+.box h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.box .inputbox input{
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.inputbox{
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.box .inputbox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.box .inputbox input:valid ~label,
+.box .inputbox input:focus ~label{
+    top: -18px;
+    color: wheat;
+    font-size: 16px;
+
+}
+
+.box input[type="submit"]{
+    border: none;
+    outline: none;
+    color: white;
+    background: wheat;
+    font-size: 16px;
+    padding: 10px 100px;
+    border-radius: 8px;
+    margin-left: 35px;
+}
+
+.checkbox{
+    margin-bottom: 20px;
+}
+
+span{
+    padding-left: 5px;
+}
+
+.no-id{
+    padding-top: 50px;
+}
+
+.no-id a{
+    text-decoration:none;
+}
+
+
+
