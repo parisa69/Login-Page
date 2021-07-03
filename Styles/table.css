@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-image: url("../image/image.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-top: -200px;
+    width: 100vw;
+}
+
+
+.tbl{
+    margin-top: 250px;
+    background-image: linear-gradient(to right,rgba(76, 0, 130, 0.753),rgba(238, 130, 238, 0.7)); 
+    border-radius: 10px;
+}
+
+.tbl tr td{
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tbl tr th{
+    padding: 30px;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    color: rgb(11, 11, 172);
+}
+
+.table .tbl .cap{
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: rgba(246, 228, 63, 0.8);
+}
+
+.tbl tr:hover {
+    background-color: #eef12f;
+}
+
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100vw;
+    margin-top: 100px;
+    
+}
+
+
+.form .new-form input{
+    border-radius: 5px;
+    color: aqua;
+    padding: 5px;
+    margin: 1px;
+background:  rgba(181, 181, 184, 0.527);
+}
+
+.form .new-form .btn-add{
+    border-radius: 5px;
+    padding: 6px 18px;
+    background-color: chartreuse;
+    margin-left: 5px;
+}
+
+.form .new-form .btn-update{
+    border-radius: 5px;
+    padding: 6px 7px;
+    background-color: rgb(208, 245, 0);
+    margin-left: 5px;
+}
+
+.btn-edit{
+    border-radius: 5px;
+    padding: 6px 16px;
+    background-color: rgb(0, 195, 255);
+    margin-left: 5px;
+}
+
+.btn-delete{
+    border-radius: 5px;
+    padding: 6px 8px;
+    background-color: rgb(255, 0, 0);
+    margin: -15px;
+}

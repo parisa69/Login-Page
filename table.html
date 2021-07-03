@@ -3,39 +3,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="Styles/table.css">
+
+    <script src="js/jquery-3.6.0.js"></script>
     <title>tbl</title>
 </head>
 
 <body>
+    <div>
+        <form class="form">
+            <div class="new-form">
+                <input type="text" name="fName" placeholder="First Name" required>
+                <input type="text" name="lName" placeholder="Last Name" required>
+                <input type="text" name="age" placeholder="Age" required>
+                <input type="text" name="city" placeholder="City" required>
+                <button type="button" class="btn-add">Add</button>
+                <button type="button" class="btn-update">Update</button>
+
+            </div>
+        </form>
+
+    </div>
     <div class="table">
         <table class="tbl">
             <caption class="cap">Personal information</caption>
-            <tr>
+            <thead>
+                <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
                 <th>City</th>
-            </tr>
-            <tr>
+                <th colspan="2">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- <tr>
                 <td>Parisa</td>
                 <td>Ameri</td>
                 <td>30</td>
                 <td>Esfahan</td>
-            </tr>
-            <tr>
+                </tr>
+                <tr>
                 <td>Sara</td>
                 <td>Amini</td>
                 <td>25</td>
                 <td>Tehran</td>
-            </tr>
-            <tr>
+                </tr>
+                <tr>
                 <td>Nazi</td>
                 <td>Saeidi</td>
                 <td>45</td>
                 <td>Mashhad</td>
-            </tr>
+                </tr> -->
+            </tbody>
         </table>
     </div>
 </body>
+
+
+
+<script>
+    $(function() {
+        $('.btn-add').click(function() {
+            var _fName = $('input[name="fName"]').val();
+            var _lName = $('input[name="lName"]').val();
+            var _age = $('input[name="age"]').val();
+            var _city = $('input[name="city"]').val();
+
+            var _tr = '<tr>  <td>'+_fName+'</td>  <td>'+_lName+'</td>  <td>'+_age+'</td>  <td>'+_city+'</td> <td><button type="button" class="btn-edit">Edit</button></td> <td><button type="button" class="btn-delete">Delete</button></td> </tr>';
+
+            $("tbody").append(_tr);
+        });
+
+        var _trEdit = null;
+        $(document).on('click' , '.btn-edit' , function(){
+            _trEdit = $(this).closest('tr');
+            var _fName = $(_trEdit).find('td:eq(0)').text();      
+            var _lName = $(_trEdit).find('td:eq(1)').text();
+            var _age = $(_trEdit).find('td:eq(2)').text();
+            var _city = $(_trEdit).find('td:eq(3)').text();
+
+
+            $('input[name="fName"]').val(_fName);
+            $('input[name="lName"]').val(_lName);
+            $('input[name="age"]').val(_age);
+            $('input[name="city"]').val(_city);
+        });
+
+
+        $('.btn-update').click(function(){
+            if(_trEdit){
+            var _fName = $('input[name="fName"]').val();
+            var _lName = $('input[name="lName"]').val();
+            var _age = $('input[name="age"]').val();
+            var _city = $('input[name="city"]').val();
+
+            $(_trEdit).find('td:eq(0)').text(_fName);      
+            $(_trEdit).find('td:eq(1)').text(_lName);
+            $(_trEdit).find('td:eq(2)').text(_age);
+            $(_trEdit).find('td:eq(3)').text(_city);
+            
+            alert("Record has been updeted");
+            _trEdit = null;
+            }
+        });
+
+
+        $(document).on('click' , '.btn-delete' , function(){
+            $(this).closest('tr').remove();
+        });
+
+
+
+
+    })
+</script>
 </html>
